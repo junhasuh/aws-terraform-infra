@@ -1,0 +1,4 @@
+# 복사해서 terraform.tfvars 로 쓰고 값을 채운다. 실제 tfvars 는 커밋하지 않는다.
+aws_region    = "ap-northeast-2"
+iam_user_list = ["your_user_name"]
+image_id      = "ami-xxxxxxxxxxxxxxxxx"

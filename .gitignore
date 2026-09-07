@@ -1,0 +1,34 @@
+# ── 절대 커밋 금지 ──────────────────────────────
+# state 파일: 리소스 속성이 평문으로 들어 있고, IAM 리소스의 경우
+# 액세스 키·시크릿까지 담길 수 있다. 원격 백엔드(S3)를 쓰므로 로컬에 남을 이유도 없다.
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# 프로바이더 바이너리 캐시 (수백 MB)
+.terraform/
+
+# 변수 실제값 — 계정 ID·버킷명 등 환경 고유값
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# 자격 증명·키
+*.pem
+*.key
+.aws/
+credentials
+
+# 크래시 로그
+crash.log
+crash.*.log
+
+# 에디터·OS
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# ── 커밋하는 것 ────────────────────────────────
+# .terraform.lock.hcl 은 커밋한다 (팀원이 같은 프로바이더 버전을 쓰게 하는 파일)

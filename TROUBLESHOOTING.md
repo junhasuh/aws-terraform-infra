@@ -149,6 +149,7 @@ free -h
 | `Backend reinitialization required` | 에러가 아니라 절차 안내 | `terraform init` → state 복사 여부에 `yes` |
 | `Unsupported Terraform Core version` | CLI가 v0.12. `source` 문법은 0.13+, AWS Provider 5.x는 TF 1.x 필요 | **`rm -rf .terraform`으로는 해결되지 않는다.** 바이너리 교체 (`tfenv`) |
 | `Error refreshing state: AccessDenied` (403) | 백엔드 S3 권한 부족 | `s3:ListBucket`은 **버킷 ARN**에, `GetObject`류는 **객체 ARN(`/*`)** 에 부여. 이 둘을 혼동해 `/*`만 주는 경우가 흔하다 |
+| `Duplicate provider configuration` | 같은 디렉터리 init.tf·provider.tf에 alias 없는 provider 블록 두 개 | 하나로 합치고 버전 제약은 `required_providers`로 이동 |
 
 **에러가 났을 때의 순서**
 
